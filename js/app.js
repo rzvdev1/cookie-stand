@@ -38,6 +38,33 @@ function render(shop) {
   document.body.appendChild(table);
 }
 
+
+function renderArray(shop) {
+  let hourlySalesList = document.createElement("ul");
+
+  for (let i = 6; i < 19; i++) {
+    let customers = randomNumbers(shop.minCustomers, shop.maxCustomers);
+    let cookies = Math.round(customers * shop.avgCookies);
+    shop.hourlySales.push(cookies);
+
+    let listItem = document.createElement("li");
+    listItem.textContent = `${i}:00 - ${cookies} cookies sold`;
+    hourlySalesList.appendChild(listItem);
+  }
+
+  let sum = 0;
+  for (let i = 0; i < shop.hourlySales.length; i++) {
+    sum += shop.hourlySales[i];
+  }
+
+  let totalListItem = document.createElement("li");
+  totalListItem.textContent = "Total cookies sold: " + sum;
+  hourlySalesList.appendChild(totalListItem);
+
+  document.body.appendChild(hourlySalesList);
+}
+
+
 let shopOne = {
   location: "Seattle",
   minCustomers: randomNumbers(20, 55),
@@ -47,6 +74,9 @@ let shopOne = {
 };
 
 render(shopOne);
+
+renderArray(shopOne);
+
 
 let shopTwo = {
   location: "Tokyo",
@@ -58,6 +88,9 @@ let shopTwo = {
 
 render(shopTwo);
 
+renderArray(shopTwo);
+
+
 let shopThree = {
   location: "Dubai",
   minCustomers: randomNumbers(1, 25),
@@ -67,6 +100,9 @@ let shopThree = {
 };
 
 render(shopThree);
+
+renderArray(shopThree);
+
 
 let shopFour = {
   location: "Paris",
@@ -78,6 +114,9 @@ let shopFour = {
 
 render(shopFour);
 
+renderArray(shopFour);
+
+
 let shopFive = {
   location: "Lima",
   minCustomers: randomNumbers(1, 25),
@@ -87,3 +126,6 @@ let shopFive = {
 };
 
 render(shopFive);
+
+renderArray(shopFive);
+
