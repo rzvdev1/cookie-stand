@@ -6,61 +6,85 @@ function render(shop) {
   let table = document.createElement("table");
 
   let headerRow = document.createElement("tr");
-  let locationHeader = document.createElement("th");
-  locationHeader.textContent = "Location";
-  let minCustomersHeader = document.createElement("th");
-  minCustomersHeader.textContent = "Min / Cust";
-  let maxCustomersHeader = document.createElement("th");
-  maxCustomersHeader.textContent = "Max / Cust";
-  let avgCookiesHeader = document.createElement("th");
-  avgCookiesHeader.textContent = "Avg Cookie / Sale";
-  headerRow.appendChild(locationHeader);
-  headerRow.appendChild(minCustomersHeader);
-  headerRow.appendChild(maxCustomersHeader);
-  headerRow.appendChild(avgCookiesHeader);
-  table.appendChild(headerRow);
+  let emptyCell = document.createElement("th");
+  headerRow.appendChild(emptyCell);
 
-  let dataRow = document.createElement("tr");
-  let locationCell = document.createElement("td");
-  locationCell.textContent = shop.location;
-  let minCustomersCell = document.createElement("td");
-  minCustomersCell.textContent = shop.minCustomers;
-  let maxCustomersCell = document.createElement("td");
-  maxCustomersCell.textContent = shop.maxCustomers;
-  let avgCookiesCell = document.createElement("td");
-  avgCookiesCell.textContent = shop.avgCookies;
-  dataRow.appendChild(locationCell);
-  dataRow.appendChild(minCustomersCell);
-  dataRow.appendChild(maxCustomersCell);
-  dataRow.appendChild(avgCookiesCell);
-  table.appendChild(dataRow);
+  // let headerRow = document.createElement("tr");
+  // let locationHeader = document.createElement("th");
+  // locationHeader.textContent = "Location";
+  // let minCustomersHeader = document.createElement("th");
+  // minCustomersHeader.textContent = "Min / Cust";
+  // let maxCustomersHeader = document.createElement("th");
+  // maxCustomersHeader.textContent = "Max / Cust";
+  // let avgCookiesHeader = document.createElement("th");
+  // avgCookiesHeader.textContent = "Avg Cookie / Sale";
+  // headerRow.appendChild(locationHeader);
+  // headerRow.appendChild(minCustomersHeader);
+  // headerRow.appendChild(maxCustomersHeader);
+  // headerRow.appendChild(avgCookiesHeader);
+  // table.appendChild(headerRow);
+
+  // let dataRow = document.createElement("tr");
+  // let locationCell = document.createElement("td");
+  // locationCell.textContent = shop.location;
+  // let minCustomersCell = document.createElement("td");
+  // minCustomersCell.textContent = shop.minCustomers;
+  // let maxCustomersCell = document.createElement("td");
+  // maxCustomersCell.textContent = shop.maxCustomers;
+  // let avgCookiesCell = document.createElement("td");
+  // avgCookiesCell.textContent = shop.avgCookies;
+  // dataRow.appendChild(locationCell);
+  // dataRow.appendChild(minCustomersCell);
+  // dataRow.appendChild(maxCustomersCell);
+  // dataRow.appendChild(avgCookiesCell);
+  // table.appendChild(dataRow);
 
   document.body.appendChild(table);
 }
 
 function renderArray(shop) {
-  let hourlySalesList = document.createElement("ul");
+  let hourlySalesTable = document.createElement("table");
 
-  for (let i = 6; i < 19; i++) {
+  let headerRow = document.createElement("tr");
+
+  let emptyCell = document.createElement("th");
+  headerRow.appendChild(emptyCell);
+
+  // stackoverflow time format 24 hours to 12 : https://stackoverflow.com/questions/4898574/converting-24-hour-time-to-12-hour-time-w-am-pm-using-javascript
+  for (let i = 6; i < 20; i++) {
+    let hourHeader = document.createElement("th");
+    if (i <= 12) {
+      hourHeader.textContent = i + ":00am";
+    } else {
+      hourHeader.textContent = i - 12 + ":00pm";
+    }
+    headerRow.appendChild(hourHeader);
+  }
+  let dailyTotalHeader = document.createElement("th");
+  dailyTotalHeader.textContent = "Daily Location Total";
+  headerRow.appendChild(dailyTotalHeader);
+  hourlySalesTable.appendChild(headerRow);
+
+  let dataRow = document.createElement("tr");
+  let locationCell = document.createElement("td");
+  locationCell.textContent = shop.location;
+  dataRow.appendChild(locationCell);
+  let dailyTotal = 0;
+  for (let i = 6; i < 20; i++) {
     let customers = randomNumbers(shop.minCustomers, shop.maxCustomers);
     let cookies = Math.round(customers * shop.avgCookies);
     shop.hourlySales.push(cookies);
-
-    let listItem = document.createElement("li");
-    listItem.textContent = `${i}:00 - ${cookies} cookies sold`;
-    hourlySalesList.appendChild(listItem);
+    let cookiesCell = document.createElement("td");
+    cookiesCell.textContent = cookies;
+    dataRow.appendChild(cookiesCell);
+    dailyTotal += cookies;
   }
+  let dailyTotalCell = document.createElement("td");
+  dailyTotalCell.textContent = dailyTotal;
+  dataRow.appendChild(dailyTotalCell);
+  hourlySalesTable.appendChild(dataRow);
 
-  let sum = 0;
-  for (let i = 0; i < shop.hourlySales.length; i++) {
-    sum += shop.hourlySales[i];
-  }
-
-  let totalListItem = document.createElement("li");
-  totalListItem.textContent = "Total cookies sold: " + sum;
-  hourlySalesList.appendChild(totalListItem);
-
-  document.body.appendChild(hourlySalesList);
+  document.body.appendChild(hourlySalesTable);
 }
 
 let shopOne = {
@@ -122,5 +146,3 @@ let shopFive = {
 render(shopFive);
 
 renderArray(shopFive);
-
-console.log("testing branch");
