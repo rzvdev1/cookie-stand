@@ -46,9 +46,15 @@ function renderArray(shop) {
     let cookies = Math.round(customers * shop.avgCookies);
     shop.hourlySales.push(cookies);
 
-    let listItem = document.createElement("li");
-    listItem.textContent = `${i}:00 - ${cookies} cookies sold`;
-    hourlySalesList.appendChild(listItem);
+    if (i <= 12) {
+      let listItem = document.createElement("li");
+      listItem.textContent = `${i}:00am - ${cookies} cookies sold`;
+      hourlySalesList.appendChild(listItem);
+    } else {
+      let listItem = document.createElement("li");
+      listItem.textContent = `${i}:00pm - ${cookies} cookies sold`;
+      hourlySalesList.appendChild(listItem);
+    }
   }
 
   let sum = 0;
@@ -65,9 +71,9 @@ function renderArray(shop) {
 
 let shopOne = {
   location: "Seattle",
-  minCustomers: randomNumbers(20, 55),
-  maxCustomers: randomNumbers(30, 55),
-  avgCookies: randomNumbers(10, 55),
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
   hourlySales: [],
 };
 
@@ -76,9 +82,9 @@ renderArray(shopOne);
 
 let shopTwo = {
   location: "Tokyo",
-  minCustomers: randomNumbers(30, 45),
-  maxCustomers: randomNumbers(12, 25),
-  avgCookies: randomNumbers(10, 20),
+  minCustomers: 3,
+  maxCustomers: 24,
+  avgCookies: 1.2,
   hourlySales: [],
 };
 
@@ -87,9 +93,9 @@ renderArray(shopTwo);
 
 let shopThree = {
   location: "Dubai",
-  minCustomers: randomNumbers(1, 25),
-  maxCustomers: randomNumbers(15, 25),
-  avgCookies: randomNumbers(10, 35),
+  minCustomers: 11,
+  maxCustomers: 38,
+  avgCookies: 3.7,
   hourlySales: [],
 };
 
@@ -98,9 +104,9 @@ renderArray(shopThree);
 
 let shopFour = {
   location: "Paris",
-  minCustomers: randomNumbers(5, 15),
-  maxCustomers: randomNumbers(30, 35),
-  avgCookies: randomNumbers(10, 30),
+  minCustomers: 20,
+  maxCustomers: 38,
+  avgCookies: 2.3,
   hourlySales: [],
 };
 
@@ -109,9 +115,9 @@ renderArray(shopFour);
 
 let shopFive = {
   location: "Lima",
-  minCustomers: randomNumbers(1, 25),
-  maxCustomers: randomNumbers(60, 65),
-  avgCookies: randomNumbers(45, 55),
+  minCustomers: 2,
+  maxCustomers: 16,
+  avgCookies: 4.6,
   hourlySales: [],
 };
 
