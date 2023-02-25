@@ -1,14 +1,21 @@
 h1 {
-  color: red;
+  color: navy;
+  text-align: center;
+  font-size: 35px;
 }
 table {
   border-collapse: collapse;
+  margin: auto;
 }
 th,
 td {
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 18px;
 }
 th {
   text-align: left;
+}
+tr:nth-child(even) {
+  background-color: lightgray;
 }
