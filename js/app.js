@@ -38,7 +38,6 @@ function render(shop) {
   document.body.appendChild(table);
 }
 
-
 function renderArray(shop) {
   let hourlySalesList = document.createElement("ul");
 
@@ -64,7 +63,6 @@ function renderArray(shop) {
   document.body.appendChild(hourlySalesList);
 }
 
-
 let shopOne = {
   location: "Seattle",
   minCustomers: randomNumbers(20, 55),
@@ -76,7 +74,6 @@ let shopOne = {
 render(shopOne);
 
 renderArray(shopOne);
-
 
 let shopTwo = {
   location: "Tokyo",
@@ -90,7 +87,6 @@ render(shopTwo);
 
 renderArray(shopTwo);
 
-
 let shopThree = {
   location: "Dubai",
   minCustomers: randomNumbers(1, 25),
@@ -102,7 +98,6 @@ let shopThree = {
 render(shopThree);
 
 renderArray(shopThree);
-
 
 let shopFour = {
   location: "Paris",
@@ -116,7 +111,6 @@ render(shopFour);
 
 renderArray(shopFour);
 
-
 let shopFive = {
   location: "Lima",
   minCustomers: randomNumbers(1, 25),
@@ -129,3 +123,4 @@ render(shopFive);
 
 renderArray(shopFive);
 
+console.log("testing branch");
