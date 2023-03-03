@@ -88,3 +88,29 @@ input[type="submit"]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.navbar-img {
+  border-radius: 50%;
+  width: 85px;
+}
+nav {
+  display: flex;
+  justify-content: flex-start;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+#list-item {
+  display: block;
+}
