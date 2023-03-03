@@ -68,10 +68,36 @@ let shopThree = new CookieShop("Dubai", 1, 25, 20);
 let shopFour = new CookieShop("Paris", 5, 15, 25);
 let shopFive = new CookieShop("Lima", 1, 25, 50);
 
-shopOne.render(table);
-shopTwo.render(table);
-shopThree.render(table);
-shopFour.render(table);
-shopFive.render(table);
+let shops = [shopOne, shopTwo, shopThree, shopFour, shopFive];
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+for (let shop of shops) {
+  shop.render(table);
+}
+
+let totalRow = document.createElement("tr");
+let totalHeader = document.createElement("th");
+totalHeader.textContent = "Total";
+totalRow.appendChild(totalHeader);
+
+let hourlyTotal = 0;
+let grandTotal = 0;
+
+for (let i = 0; i < 14; i++) {
+  for (let shop of shops) {
+    hourlyTotal += shop.hourlySales[i];
+  }
+  grandTotal += hourlyTotal;
+  let totalCell = document.createElement("td");
+  totalCell.textContent = hourlyTotal;
+  totalRow.appendChild(totalCell);
+  hourlyTotal = 0;
+}
+
+let totalCell = document.createElement("td");
+totalCell.textContent = grandTotal;
+totalRow.appendChild(totalCell);
+
+table.appendChild(totalRow);
 
 document.body.appendChild(table);
