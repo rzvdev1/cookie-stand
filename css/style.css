@@ -3,6 +3,11 @@ h1 {
   text-align: center;
   font-size: 35px;
 }
+h2.h2-text {
+  text-align: center;
+  font-size: 30px;
+  color: darkcyan;
+}
 table {
   border-collapse: collapse;
   margin: auto;
@@ -25,6 +30,17 @@ tr:nth-child(even) {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+footer {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* w3schools css for contact form */
