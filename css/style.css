@@ -8,6 +8,7 @@ h2.h2-text {
   font-size: 30px;
   color: darkcyan;
 }
+
 table {
   border-collapse: collapse;
   margin: auto;
@@ -31,6 +32,9 @@ tr:nth-child(even) {
   margin-right: auto;
   width: 50%;
 }
+hr {
+  width: 25%;
+}
 
 footer {
   text-align: center;
@@ -41,6 +45,15 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  background-color: rgb(83, 53, 167);
+  border-radius: 15%;
+}
+.style {
+  font-size: 20px;
+  text-align: center;
+}
+li {
+  list-style-type: none;
 }
 
 /* w3schools css for contact form */
