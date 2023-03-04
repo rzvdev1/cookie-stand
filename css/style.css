@@ -46,6 +46,7 @@ tr:nth-child(even) {
     0% 85%
   );
 }
+
 hr {
   width: 25%;
 }
@@ -59,8 +60,11 @@ footer {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgb(83, 53, 167);
+  background-color: rgb(71, 234, 228);
   border-radius: 15%;
+}
+img {
+  margin: 35px;
 }
 .style {
   font-size: 20px;
