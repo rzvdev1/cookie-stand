@@ -101,3 +101,12 @@ totalRow.appendChild(totalCell);
 table.appendChild(totalRow);
 
 document.body.appendChild(table);
+
+let myForm = document.getElementById("my-form");
+
+function handleSubmit(event) {
+  event.preventDefault();
+  alert("This form has been successfully submitted!");
+}
+
+myForm.addEventListener("submit", handleSubmit);
