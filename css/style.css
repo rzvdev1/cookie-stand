@@ -103,3 +103,11 @@ legend {
   text-align: center;
   font-size: 25px;
 }
+button {
+  margin: 5px;
+  padding: 5px;
+}
+fieldset {
+  border: 2px solid #787784;
+  background: #7593ff;
+}

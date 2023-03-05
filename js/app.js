@@ -106,7 +106,24 @@ let myForm = document.getElementById("my-form");
 
 function handleSubmit(event) {
   event.preventDefault();
+
+  const location = document.getElementById("location").value;
+  const minCustomers = parseInt(document.getElementById("min-customers").value);
+  const maxCustomers = parseInt(document.getElementById("max-customers").value);
+  const avgCookies = parseInt(document.getElementById("avg-cookies").value);
+
+  const newShop = new CookieShop(
+    location,
+    minCustomers,
+    maxCustomers,
+    avgCookies
+  );
+  shops.push(newShop);
+
+  newShop.render(table);
   alert("This form has been successfully submitted!");
+
+  myForm.reset();
 }
 
 myForm.addEventListener("submit", handleSubmit);

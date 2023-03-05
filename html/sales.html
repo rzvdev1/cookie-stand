@@ -12,28 +12,24 @@
     <h1>Sales</h1>
     <form id="my-form">
       <fieldset>
-        <legend>Contact information</legend>
-        <label for="fname">First Name</label>
+        <legend>Add new location</legend>
+        <label for="location">Location </label>
         <input
           type="text"
-          id="fname"
-          name="firstname"
-          placeholder="Enter your first name.."
+          id="location"
+          name="location"
+          placeholder="Enter a location.."
         />
-        <label for="lname">Last Name</label>
-        <input
-          type="text"
-          id="lname"
-          name="lastname"
-          placeholder="Your last name.."
-        />
-        <label>
-          <select>
-            <option>test</option>
-          </select>
-        </label>
+        <label for="min-customers">Min Customers </label>
+        <input type="number" id="min-customers" name="min-customers" />
+
+        <label for="max-customers">Max Customers </label>
+        <input type="number" id="max-customers" name="max-customers" />
+
+        <label for="avg-cookies">Avg Cookies per Customer </label>
+        <input type="number" id="avg-cookies" name="avg-cookies" />
+        <button type="submit">Submit</button>
       </fieldset>
-      <button type="submit">Submit</button>
     </form>
     <script src="../js/app.js"></script>
   </body>
