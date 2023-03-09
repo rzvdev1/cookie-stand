@@ -1,12 +1,8 @@
 h1 {
   color: navy;
   text-align: center;
-  font-size: 35px;
-}
-h2.h2-text {
-  text-align: center;
-  font-size: 30px;
-  color: darkcyan;
+  font-size: 55px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 table {
@@ -59,12 +55,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  background-color: rgb(71, 234, 228);
-  border-radius: 15%;
+  flex-wrap: wrap-reverse;
 }
-img {
-  margin: 35px;
+.flex-container img {
+  margin: 20px;
+  height: 200px;
 }
 .style {
   font-size: 20px;
@@ -78,18 +73,19 @@ li {
   border-radius: 50%;
   width: 85px;
 }
-nav {
-  display: flex;
-  justify-content: flex-start;
-}
+
 ul {
   list-style-type: none;
+}
+#bckgd {
+  background-color: aliceblue;
 }
 li {
   list-style-type: none;
   display: inline-block;
   padding: 10px;
   vertical-align: middle;
+  font-family: "Sofia", sans-serif;
 }
 a {
   text-decoration: none;
@@ -110,4 +106,27 @@ button {
 fieldset {
   border: 2px solid #787784;
   background: #7593ff;
+}
+/* w3schools footer */
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: linen;
+  color: black;
+  text-align: center;
+}
+.background-color {
+  background-color: rgb(82, 102, 123);
+}
+
+.title {
+  font-family: "Cairo";
+  text-align: center;
+  color: #25223d;
+}
+
+h4 {
+  font-size: 35px;
+  text-shadow: 4px 4px rgb(144, 117, 131);
 }
