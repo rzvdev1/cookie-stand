@@ -28,6 +28,6 @@ Reference I use was w3schools and mozilla developer
 
 ## Lighthouse
 
-[](Screenshot%202023-03-09%20at%202.56.16%20PM.png)
+![Lighthouse](Screenshot%202023-03-09%20at%202.56.16%20PM.png)
 
 MIT License &copy; [Julio Ramirez](LICENSE)
