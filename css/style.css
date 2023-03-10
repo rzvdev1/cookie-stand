@@ -99,13 +99,65 @@ legend {
   text-align: center;
   font-size: 25px;
 }
+/* https://uiverse.io/vikiWayne/slimy-horse-19 */
 button {
-  margin: 5px;
-  padding: 5px;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #322249;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #7f05d6;
+  margin: auto;
+  display: block;
 }
+label {
+  color: rgb(0, 0, 0);
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #601a9d;
+  box-shadow: 4px 5px 17px -4px #bf90f2;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #762caf;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 150%;
+}
+/* https://uiverse.io/garerim/bitter-donkey-79 */
+input {
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+}
+
 fieldset {
   border: 2px solid #787784;
-  background: #7593ff;
+  background: #a7b9f9;
 }
 /* w3schools footer */
 footer {

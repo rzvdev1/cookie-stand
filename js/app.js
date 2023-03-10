@@ -121,6 +121,7 @@ function handleSubmit(event) {
   shops.push(newShop);
 
   newShop.render(table);
+
   alert("This form has been successfully submitted!");
 
   myForm.reset();
