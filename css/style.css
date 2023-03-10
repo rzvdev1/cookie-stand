@@ -107,40 +107,41 @@ button {
   font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: #322249;
+  color: #2c9caf;
   transition: all 1000ms;
   font-size: 15px;
   position: relative;
   overflow: hidden;
-  outline: 2px solid #7f05d6;
+  outline: 2px solid #2c9caf;
   margin: auto;
   display: block;
-}
-label {
-  color: rgb(0, 0, 0);
 }
 
 button:hover {
   color: #ffffff;
   transform: scale(1.1);
-  outline: 2px solid #601a9d;
-  box-shadow: 4px 5px 17px -4px #bf90f2;
+  outline: 2px solid #f5fcfd;
+  box-shadow: 4px 5px 17px -4px #5a2691;
 }
 
 button::before {
+  content: "";
   position: absolute;
   left: -50px;
   top: 0;
   width: 0;
   height: 100%;
-  background-color: #762caf;
+  background-color: #581373;
   transform: skewX(45deg);
   z-index: -1;
   transition: width 1000ms;
 }
 
 button:hover::before {
-  width: 150%;
+  width: 250%;
+}
+label {
+  color: rgb(15, 14, 14);
 }
 /* https://uiverse.io/garerim/bitter-donkey-79 */
 input {
@@ -180,4 +181,8 @@ footer {
 h4 {
   font-size: 35px;
   text-shadow: 4px 4px rgb(144, 117, 131);
+}
+input::placeholder {
+  font-weight: bold;
+  color: rgba(9, 9, 9, 0.446);
 }
