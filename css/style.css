@@ -128,7 +128,6 @@ button:hover {
 }
 
 button::before {
-  content: "";
   position: absolute;
   left: -50px;
   top: 0;
